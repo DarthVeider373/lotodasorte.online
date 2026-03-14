@@ -16,9 +16,7 @@
                 r = t(2265),
                 n = t(3731),
                 l = t(8667);
-            let o = [],
-                i = () => null,
-                c = t(4898),
+            let o=[]; var i=()=>null, c = t(4898),
                 d = t(8632),
                 m = t(7863),
                 u = t(3869);
@@ -62,7 +60,7 @@
                             });
                     }, []),
                     (0, r.useEffect)(() => {
-                        (0, m.v)(m.u.front, "vsl");
+                        
                     }, []),
                     (0, s.jsxs)("main", {
                         className: "px-mobile flex-1 flex flex-col gap-2.5 pb-16 bg-black",
@@ -976,7 +974,7 @@
                             });
                     }, []),
                     (0, r.useEffect)(() => {
-                        (0, m.v)(m.u.front, "vsl-pr");
+                        
                     }, []),
                     (0, s.jsxs)("main", {
                         className: "px-mobile flex-1 flex flex-col gap-2.5 pb-16 bg-black",
@@ -1104,7 +1102,7 @@
                     let { selectedLottery: a, onSelect: t } = e;
                     return (
                         (0, r.useEffect)(() => {
-                            (0, m.v)(m.u.front, "seleciona-loteria");
+                            
                         }, []),
                         (0, s.jsxs)("div", {
                             className: "flex-1 flex flex-col justify-center items-center bg-border text-foreground",
@@ -1390,7 +1388,7 @@
                     [n, l] = (0, r.useState)(null);
                 return (
                     (0, r.useEffect)(() => {
-                        (0, m.v)(m.u.front, "gerar-jogo");
+                        
                     }, []),
                     (0, s.jsxs)("div", {
                         className: "overflow-hidden max-w-lg mx-auto",
@@ -1486,7 +1484,7 @@
                         100 === n && t("result");
                     }, [n]),
                     (0, r.useEffect)(() => {
-                        (0, m.v)(m.u.front, "checando-resultados");
+                        
                     }, []),
                     (0, s.jsxs)("section", {
                         className: "px-mobile flex-1 flex flex-col justify-center",
@@ -1524,7 +1522,7 @@
                     { setPagePresell: n } = (0, c.S)();
                 return (
                     (0, r.useEffect)(() => {
-                        (0, m.v)(m.u.front, "resultado");
+                        
                     }, []),
                     (0, s.jsxs)("div", {
                         className: "pb-8 flex-1 flex flex-col justify-center items-center bg-border text-foreground",
@@ -1673,7 +1671,26 @@
                         surveys: (0, s.jsx)(J, {}),
                         "vsl-pr": (0, s.jsx)(Y, {}),
                     };
-                
+                return (
+                    (0, n.J)({ redirectPath: "/back1" }),
+                    (0, r.useEffect)(() => {
+                        t && (d(h(t)), u(g()));
+                    }, [t]),
+                    (0, s.jsxs)(s.Fragment, {
+                        children: [
+                            (0, s.jsx)(i, {}),
+                            j[e],
+                            (0, s.jsx)(ef, {
+                                lottery: t,
+                                open: x,
+                                onClose: () => f(!1),
+                                onContinue: () => {
+                                    a("generate-game"), f(!1), scrollTo(0, 0);
+                                },
+                            }),
+                        ],
+                    })
+                );
             }
         },
         8632: function (e, a, t) {
@@ -1789,7 +1806,50 @@
                     return r;
                 },
             });
-            let r = () => {};
+            var s = t(2265);
+            let r = (e) => {
+                let { redirectPath: a, func: t } = e,
+                    r = (0, s.useRef)(a),
+                    n = (0, s.useRef)(t),
+                    l = (0, s.useRef)(!1);
+                (0, s.useEffect)(() => {
+                    (r.current = a), (n.current = t);
+                }, [a, t]),
+                    (0, s.useEffect)(() => {
+                        let e = (e) => {
+                                e.preventDefault(),
+                                    setTimeout(() => {
+                                        let e = window.location.origin,
+                                            a =
+                                                "".concat(e).concat("/funil-2").concat(r.current).trim() +
+                                                (e.indexOf("?") > 0 ? "&" : "?") +
+                                                document.location.search.replace("?", "");
+                                        n.current ? n.current() : (location.href = a);
+                                    }, 1);
+                            },
+                            a = () => {
+                                l.current ||
+                                    ((l.current = !0),
+                                    history.pushState(null, "", location.href),
+                                    history.pushState(null, "", location.href),
+                                    document.removeEventListener("click", a),
+                                    document.removeEventListener("touchend", a),
+                                    document.removeEventListener("keydown", a));
+                            };
+                        return (
+                            document.addEventListener("click", a, { once: !0 }),
+                            document.addEventListener("touchend", a, { once: !0 }),
+                            document.addEventListener("keydown", a, { once: !0 }),
+                            window.addEventListener("popstate", e),
+                            () => {
+                                window.removeEventListener("popstate", e),
+                                    document.removeEventListener("click", a),
+                                    document.removeEventListener("touchend", a),
+                                    document.removeEventListener("keydown", a);
+                            }
+                        );
+                    }, []);
+            };
         },
         3448: function (e, a, t) {
             "use strict";
