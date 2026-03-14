@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Última Chance Especial</title>
+
+  <script>!function (i, n) { i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now()) }(window, performance);</script>
+
+  <link rel="preload" href="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/69b49680faf9397e233450b5/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="preload" href="https://cdn.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/69b49649005f4e6dadac0693/main.m3u8" as="fetch">
+
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #ececec;
+      color: #1b1b1b;
+    }
+
+    .top-banner {
+      background: #b71c1c;
+      color: #fff;
+      text-align: center;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 16px 50px;
+    }
+
+    .video-box {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 24px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, .22);
+      border: 4px solid #cfcfcf;
+      background: #000;
+    }
+
+    .offer-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+      border: 1px solid #ddd;
+    }
+
+    .alert {
+      display: inline-block;
+      background: #fff3cd;
+      color: #7a5b00;
+      border: 1px solid #f0d98b;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.1;
+      text-align: center;
+      margin-bottom: 14px;
+      color: #111;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 19px;
+      line-height: 1.45;
+      color: #333;
+      margin-bottom: 22px;
+    }
+
+    .highlight {
+      color: #0f7865;
+      font-weight: 800;
+    }
+
+    .price-box {
+      background: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
+      border: 2px dashed #c8c8c8;
+      border-radius: 18px;
+      padding: 22px 18px;
+      text-align: center;
+      margin: 26px 0;
+    }
+
+    .old-price {
+      font-size: 18px;
+      color: #777;
+      text-decoration: line-through;
+      margin-bottom: 8px;
+    }
+
+    .new-price-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .new-price {
+      font-size: 52px;
+      font-weight: 900;
+      color: #0f7865;
+      line-height: 1;
+    }
+
+    .new-price small {
+      font-size: 22px;
+      vertical-align: top;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 26px 0 14px;
+      color: #111;
+      text-align: center;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .benefit-item {
+      background: #f7f7f7;
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .benefit-item strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 6px;
+      color: #0f7865;
+    }
+
+    .benefit-item p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .note-box {
+      margin-top: 18px;
+      background: #fdf6f6;
+      border: 1px solid #efcaca;
+      border-radius: 14px;
+      padding: 16px;
+      color: #5e2c2c;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .guarantee-box {
+      margin-top: 24px;
+      background: #eef8f4;
+      border: 1px solid #cfe8de;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .guarantee-box h3 {
+      font-size: 21px;
+      color: #0f7865;
+      margin-bottom: 8px;
+    }
+
+    .guarantee-box p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .urgency {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #b71c1c;
+      line-height: 1.5;
+    }
+
+    .upsell-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin: 26px auto 0;
+      text-align: center;
+    }
+
+    .mini-warning {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .new-price {
+        font-size: 44px;
+      }
+
+      .offer-card {
+        padding: 22px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-banner {
+        font-size: 12px;
+        padding: 10px 12px;
+      }
+
+      .container {
+        padding: 18px 12px 40px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 21px;
+      }
+
+      .new-price {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-banner">
+    Atenção: esta condição especial pode sair do ar a qualquer momento
+  </div>
+
+  <div class="container">
+
+
+    <div class="offer-card">
+      <div style="text-align:center;">
+        <div class="alert">última oportunidade especial</div>
+      </div>
+
+      <h1>Espere... antes de sair</h1>
+
+      <p class="subtitle">
+        Talvez <span class="highlight">R$197</span> tenha ficado acima do que você queria investir agora.
+        Então eu resolvi liberar uma <span class="highlight">condição reduzida</span> para você não perder essa oportunidade.
+      </p>
+
+      <div class="price-box">
+        <div class="old-price">de R$197,00</div>
+        <div class="new-price-label">hoje por apenas</div>
+        <div class="new-price"><small>R$</small>97</div>
+      </div>
+
+      <p class="subtitle" style="margin-bottom: 10px;">
+        Você continua entrando em uma <span class="highlight">versão especial do grupo</span>,
+        com acesso aos recursos centrais para acompanhar as estratégias, conteúdos e oportunidades compartilhadas.
+      </p>
+
+      <h2 class="section-title">O que você recebe nesta condição</h2>
+
+      <div class="benefits">
+        <div class="benefit-item">
+          <strong>Jogos e sugestões enviadas com frequência</strong>
+          <p>Receba orientações, combinações e conteúdos estratégicos para acompanhar melhor sua rotina de apostas.</p>
+        </div>
+
+        <div class="benefit-item">
+          <strong>Acesso à comunidade exclusiva</strong>
+          <p>Entre no grupo reservado, acompanhe atualizações e veja como outros membros organizam suas entradas.</p>
+        </div>
+
+        <div class="benefit-item">
+          <strong>Participação em conteúdos e oportunidades selecionadas</strong>
+          <p>Tenha acesso a informações, avisos e dinâmicas especiais disponibilizadas para os membros dessa versão da oferta.</p>
+        </div>
+
+        <div class="benefit-item">
+          <strong>Método e organização prática</strong>
+          <p>Entenda a estrutura do sistema, acompanhe a lógica de uso e tenha um caminho mais claro para aplicar o que aprendeu.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>Importante:</strong> para liberar essa condição por apenas <strong>R$97</strong>, alguns bônus avançados da oferta principal não estão incluídos nesta versão.
+        Ainda assim, você leva a parte central da experiência por um valor muito mais baixo.
+      </div>
+
+      <div class="guarantee-box">
+        <h3>Garantia de 7 dias</h3>
+        <p>
+          Você pode testar com tranquilidade. Se achar que essa oferta não faz sentido para você,
+          basta solicitar dentro do prazo e receberá o reembolso conforme as regras da oferta.
+        </p>
+      </div>
+
+      <div class="urgency">
+        Esta condição aparece apenas agora.<br>
+        Se você sair desta página, pode não ver esse valor novamente.
+      </div>
+
+      <div>
+        <meta charset="UTF-8">
+        <cakto-upsell-buttons>
+          <cakto-upsell-accept bg-color="#0f7865" text-color="#ffffff" upsell-accept-url="members_area" offer-id="qiu2d8d" app-base-url="https://app.cakto.com.br" offer-type="downsell" upsell-reject-url="members_area">
+            Sim, quero aproveitar essa última chance
+          </cakto-upsell-accept>
+          <cakto-upsell-reject upsell-reject-url="members_area">
+            Não, eu não quero aproveitar
+          </cakto-upsell-reject>
+        </cakto-upsell-buttons>
+
+
+        <!-- Descomente o código abaixo para estilzar o css dos botões -->
+        <!-- <style>
+          /* Botão de aceitar upsell */
+          cakto-upsell-accept::part(button) {
+              background-color: red;
+              color: white;
+              /* Ajuste do tamanho do botão 
+              Descomente o código abaixo para definir um tamanho customizado para o botão */
+              /* width: 100vw; */
+          }
+
+          /* Botão de rejeitar upsell */
+          cakto-upsell-reject::part(button) {
+              background-color: blue;
+              color: white;
+          }
+      </style> -->
+
+        <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+      </div>
+
+      <p class="mini-warning">
+        Oferta complementar sujeita às regras da plataforma e disponibilidade no momento do acesso.
+      </p>
+
+      <div class="footer-note">
+        Este produto não substitui decisão financeira individual. Resultados variam de pessoa para pessoa.
+        Nenhuma forma de ganho pode ser garantida.
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
